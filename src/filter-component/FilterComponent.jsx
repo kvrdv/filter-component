@@ -12,7 +12,7 @@ import {
 function FilterComponent({ data }) {
 	const [isShow, setIsShow] = useState(false);
 	const [count, setCount] = useState(0);
-	const [activeTab, setActiveTab] = useState('округ');
+	const [activeTab, setActiveTab] = useState('жк');
 	const [checkboxes, setCheckboxes] = useState(data.items);
 
 	useEffect(() => {
