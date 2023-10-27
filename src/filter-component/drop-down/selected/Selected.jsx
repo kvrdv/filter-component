@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef, useEffect } from 'react';
 import { activeTabContext, checkboxesContext } from '../../context';
 import styles from './Selected.module.scss';
 import cn from 'classnames';
@@ -7,6 +7,7 @@ import deleteLogo from './delete-logo.svg';
 function Selected() {
 	const { activeTab } = useContext(activeTabContext);
 	const { checkboxes, setCheckboxes } = useContext(checkboxesContext);
+	const ref = useRef(null);
 
 	const showSelected =
 		checkboxes.filter(
@@ -24,12 +25,25 @@ function Selected() {
 		]);
 	};
 
+	useEffect(() => {
+		const element = ref.current;
+
+		element.addEventListener('wheel', (event) => {
+			event.preventDefault();
+
+			element.scrollBy({
+				left: event.deltaY < 0 ? -100 : 100,
+			});
+		});
+	}, []);
+
 	return (
 		<div
 			className={cn({
 				[styles.hidden]: showSelected,
 				[styles.selected]: true,
 			})}
+			ref={ref}
 		>
 			{checkboxes
 				.filter(({ tab }) => tab === activeTab)
