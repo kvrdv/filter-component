@@ -1,0 +1,37 @@
+@import '../../variables.scss';
+
+.tabs {
+    min-height: 2.5rem;
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid $border-primary;
+    @include header-font;
+    color: $text-tertiary;
+
+    > li {
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: -1px;
+        border-bottom: 1px solid transparent;
+        transition: color 0.2s ease-in-out;
+        box-sizing: border-box;
+
+        &:hover {
+            color: $text-primary;
+        }
+    }
+
+    .activeTab {
+        color: $text-primary;
+        border-bottom: 1px solid $text-primary;
+
+        &:hover {
+            border-bottom: 2px solid $text-primary;
+            margin-bottom: -2px;
+        }
+    }
+}

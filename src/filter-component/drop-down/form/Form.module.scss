@@ -1,0 +1,93 @@
+@import '../../variables.scss';
+
+.list {
+	@include list-font;
+	padding: 8px 0;
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	scrollbar-color: $text-primary $bg-primary;
+
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $text-primary;
+		border-radius: 6px;
+	}
+	
+	&::-webkit-scrollbar-track {
+		background: $bg-primary;
+	}
+
+	.label {
+		@include list-font;
+		height: 48px;
+		display: block;
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding-left: 16px;
+		overflow: hidden;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			background-color: $bg-neutral;
+		}
+
+		.checkbox {
+			position: absolute;
+			opacity: 0;
+			height: 0;
+			width: 0;
+
+			&:checked ~ .checked:after {
+				display: block;
+			}
+
+			&:checked ~ .checked {
+				border-radius: 100%;
+				border: 1px solid $border-primary;
+				background: $bg-accent;
+				color: $text-on-color;
+
+				&:hover {
+					background-color: $bg-accent-hover;
+				}
+			}
+		}
+
+		.checked {
+			position: absolute;
+			top: 8px;
+			right: 16px;
+			height: 32px;
+			width: 32px;
+			border: 1px solid $border-primary;
+			border-radius: 100%;
+			transition: border 0.3s ease-in-out;
+			transition: all 0.2s ease-in-out;
+
+			&:hover {
+				background-color: $bg-neutral;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				display: none;
+				right: 13px;
+				top: 10px;
+				width: 4px;
+				height: 8px;
+				border: 1px solid $text-on-color;
+				border-width: 0 2px 2px 0;
+				border-radius: 15%;
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+

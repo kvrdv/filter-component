@@ -1,0 +1,67 @@
+@import '../../variables.scss';
+
+.selected {
+	border-bottom: 1px solid $border-primary;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	padding: 0 16px;
+	height: 56px;
+	animation: fadeInDown 1s;
+	scrollbar-width: thin;
+	scrollbar-color: $text-primary $bg-primary;
+
+	&::-webkit-scrollbar {
+		height: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $text-primary;
+		border-radius: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $bg-primary;
+	}
+
+	> div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 8px;
+		height: 2rem;
+		border: 1px solid $border-primary;
+		background: $bg-neutral;
+		border-radius: 8px;
+		padding: 0 12px;
+
+		> span {
+			color: $text-primary;
+			@include selected-font;
+			white-space: nowrap;
+		}
+
+		> img {
+			width: 16px;
+			cursor: pointer;
+		}
+	}
+}
+
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -10%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}

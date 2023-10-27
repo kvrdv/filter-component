@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/arial-2');
+
+$text-primary: #07000f;
+$text-on-color: #ffffff;
+$text-tertiary: rgba(7, 0, 15, 0.4);
+
+$border-primary-hover: rgba(7, 0, 15, 0.4);
+$border-primary: rgba(7, 0, 15, 0.1);
+
+$bg-primary: #ffffff;
+$bg-neutral: rgba(2, 22, 45, 0.05);
+$bg-accent: #0067fe;
+$bg-accent-hover: #085EDB;
+
+$white-card-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.02),
+	0px 4px 32px 0px rgba(0, 0, 0, 0.02);
+$white-card-mask: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+
+@mixin header-font {
+	font-family: Roboto Condensed;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 100%;
+	letter-spacing: -0.32px;
+	text-transform: uppercase;
+}
+
+@mixin selected-font {
+	font-family: Roboto Condensed;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 120%;
+	letter-spacing: -0.28px;
+	text-transform: uppercase;
+}
+
+@mixin list-font {
+	font-family: Arial;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+}
