@@ -1,9 +1,9 @@
 ### Install and run the app:
 
 ```
-git clone https://github.com/kvrdv/filter-component.git
+git clone https://github.com/kovardaev/filter-component.git
 ```
 
 ```
-npm i && npm run start
+yarn install && yarn start
 ```
